@@ -49,7 +49,19 @@ print('---------------------------------------------------')
 
 
 # write your construct hurricane by year dictionary function here:
+def hurricanes_by_date(dict):
+    date_dict = {}
+    for key, value in hurricane_data_dict.items():
+        current_cane = hurricane_data_dict.get(key)
+        current_year = value["Year"]
+        if current_year not in date_dict.keys():
+            date_dict[current_year] = None
+            date_dict[current_year] = current_cane
+        else:
+            date_dict[current_year].append(current_cane)
 
+#test
+print(hurricanes_by_date(hurricane_data_dict))
 
 
 
