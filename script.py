@@ -55,17 +55,14 @@ def hurricanes_by_date(dict):
         current_cane = hurricane_data_dict.get(key)
         current_year = value["Year"]
         if current_year not in date_dict.keys():
-            date_dict[current_year] = None
-            date_dict[current_year] = current_cane
+            date_dict[current_year] = []
+            date_dict[current_year].append(current_cane)
         else:
             date_dict[current_year].append(current_cane)
+    return date_dict
 
-#test
 print(hurricanes_by_date(hurricane_data_dict))
-
-
-
-
+print('---------------------------------------------------')
 
 
 # write your count affected areas function here:
