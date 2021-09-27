@@ -66,6 +66,17 @@ print('---------------------------------------------------')
 
 
 # write your count affected areas function here:
+def area_occurance(hurricane_data):
+    occurence_dict = {}
+    for key, value in hurricane_data.items():
+        for area in value["Areas Affected"]:
+            if area not in occurence_dict:
+                occurence_dict[area] = 1
+            else:
+                occurence_dict[area] += 1
+    return occurence_dict
+
+print(area_occurance(hurricane_data_dict))
 
 
 
