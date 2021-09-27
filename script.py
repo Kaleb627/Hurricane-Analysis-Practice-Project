@@ -93,11 +93,17 @@ print('---------------------------------------------------')
 
 
 # write your greatest number of deaths function here:
-
-
-
-
-
+def deadliest_hurricane(hurricane_data):
+    highest_toll, deadliest_cane = 0, ''
+    for key, value in hurricane_data.items():
+        if value['Deaths'] > highest_toll:
+            highest_toll += value['Deaths']
+            deadliest_cane = key
+        else: continue
+    return print('Hurricane {} was the deadliest hurricane in the data, with a total of {} deaths.'
+    .format(deadliest_cane, highest_toll))
+deadliest_hurricane(hurricane_data_dict)
+print('---------------------------------------------------')
 
 
 # write your catgeorize by mortality function here:
