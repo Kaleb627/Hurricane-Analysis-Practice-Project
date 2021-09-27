@@ -31,12 +31,20 @@ def updated_damages(damage):
             updated_list.append(float(record[:-1]) * 1000000)
     return updated_list
 print(updated_damages(damages))
+print('---------------------------------------------------')
 
 
 # write your construct hurricane dictionary function here:
+# the function takes in lists of the relevent data
+def hurricane_dictionary(names, months, years, max_sustained_winds, areas_affected, deaths):
+    hurricane_data = {}
+    for i in range(34):
+        hurricane_data[names[i]] = {'Name': names[i], 'Month': months[i], 'Year': years[i],'Max Sustained Wind': max_sustained_winds[i], 
+        'Areas Affected': areas_affected[i], 'Damage': damages[i], 'Deaths': deaths[i]}
+    return hurricane_data
 
-
-
+hurricane_data_dict = hurricane_dictionary(names, months, years, max_sustained_winds, areas_affected, deaths)
+print(hurricane_data_dict)
 
 
 
