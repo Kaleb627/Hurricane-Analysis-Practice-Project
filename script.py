@@ -77,19 +77,19 @@ def area_occurance(hurricane_data):
     return occurence_dict
 
 print(area_occurance(hurricane_data_dict))
-
-
-
-
-
+print('---------------------------------------------------')
 
 
 # write your find most affected area function here:
-
-
-
-
-
+def most_affected():
+    occurences = area_occurance(hurricane_data_dict)
+    where_affected = max(occurences, key = occurences.get)
+    how_often = occurences.get(where_affected)
+    return print('The area hit by hurricanes most often is {} at {} hurricanes.'.format(
+        where_affected, how_often
+    ))
+most_affected()
+print('---------------------------------------------------')
 
 
 # write your greatest number of deaths function here:
