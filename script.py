@@ -45,8 +45,7 @@ def hurricane_dictionary(names, months, years, max_sustained_winds, areas_affect
 
 hurricane_data_dict = hurricane_dictionary(names, months, years, max_sustained_winds, areas_affected, deaths)
 print(hurricane_data_dict)
-
-
+print('---------------------------------------------------')
 
 
 # write your construct hurricane by year dictionary function here:
