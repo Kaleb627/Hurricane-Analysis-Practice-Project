@@ -33,7 +33,6 @@ def updated_damages(damage):
 print(updated_damages(damages))
 print('---------------------------------------------------')
 
-
 # write your construct hurricane dictionary function here:
 # the function takes in lists of the relevent data
 def hurricane_dictionary(names, months, years, max_sustained_winds, areas_affected, deaths):
@@ -46,7 +45,6 @@ def hurricane_dictionary(names, months, years, max_sustained_winds, areas_affect
 hurricane_data_dict = hurricane_dictionary(names, months, years, max_sustained_winds, areas_affected, deaths)
 print(hurricane_data_dict)
 print('---------------------------------------------------')
-
 
 # write your construct hurricane by year dictionary function here:
 def hurricanes_by_date(dict):
@@ -64,7 +62,6 @@ def hurricanes_by_date(dict):
 print(hurricanes_by_date(hurricane_data_dict))
 print('---------------------------------------------------')
 
-
 # write your count affected areas function here:
 def area_occurance(hurricane_data):
     occurence_dict = {}
@@ -79,7 +76,6 @@ def area_occurance(hurricane_data):
 print(area_occurance(hurricane_data_dict))
 print('---------------------------------------------------')
 
-
 # write your find most affected area function here:
 def most_affected():
     occurences = area_occurance(hurricane_data_dict)
@@ -90,7 +86,6 @@ def most_affected():
     ))
 most_affected()
 print('---------------------------------------------------')
-
 
 # write your greatest number of deaths function here:
 def deadliest_hurricane(hurricane_data):
@@ -104,7 +99,6 @@ def deadliest_hurricane(hurricane_data):
     .format(deadliest_cane, highest_toll))
 deadliest_hurricane(hurricane_data_dict)
 print('---------------------------------------------------')
-
 
 # write your catgeorize by mortality function here:
 
