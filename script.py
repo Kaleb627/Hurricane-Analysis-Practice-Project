@@ -30,7 +30,7 @@ def updated_damages(damage):
         else:
             updated_list.append(float(record[:-1]) * 1000000)
     return updated_list
-
+updated_damages_list = updated_damages(damages)
 print(updated_damages(damages))
 print('---------------------------------------------------')
 
@@ -117,16 +117,24 @@ def mortality_scale(hurricane_data):
         else:
             mortality_ratings[4].append(key)
     return mortality_ratings
-
 print(mortality_scale(hurricane_data_dict))
+print('---------------------------------------------------')
 
-# write your greatest damage function here:
+#write your greatest damage function here:
 def highest_damages(hurricane_data):
+    highest_damage = 0
+    damaging_hurricane = ''
+    for name, cost in list(zip(names, updated_damages_list)):
+        if cost == 'Damages not recorded':
+            continue
+        elif cost > highest_damage:
+            highest_damage = cost
+            damaging_hurricane = name
+        else: continue
+    return print('The most damaging hurricane in the data is {}, with an estimated cost of ${}.'
+    .format(damaging_hurricane, highest_damage))
 
-
-
-
-
-
+highest_damages(hurricane_data_dict)
+print('---------------------------------------------------')
 
 # write your catgeorize by damage function here:
