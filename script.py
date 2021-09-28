@@ -30,6 +30,7 @@ def updated_damages(damage):
         else:
             updated_list.append(float(record[:-1]) * 1000000)
     return updated_list
+
 print(updated_damages(damages))
 print('---------------------------------------------------')
 
@@ -101,14 +102,26 @@ deadliest_hurricane(hurricane_data_dict)
 print('---------------------------------------------------')
 
 # write your catgeorize by mortality function here:
+#mortality_scale = {0: 0, 1: 100, 2: 500, 3: 1000, 4: 10000}
+def mortality_scale(hurricane_data):
+    mortality_ratings = {0: [], 1: [], 2: [], 3: [], 4: []}
+    for key, value in hurricane_data.items():
+        if value['Deaths'] >= 0 and value['Deaths'] < 100:
+            mortality_ratings[0].append(key)
+        elif value['Deaths'] >= 100 and value['Deaths'] < 500:
+            mortality_ratings[1].append(key)
+        elif value['Deaths'] >= 500 and value['Deaths'] < 1000:
+            mortality_ratings[2].append(key)
+        elif value['Deaths'] >= 1000 and value['Deaths'] < 10000:
+            mortality_ratings[3].append(key)
+        else:
+            mortality_ratings[4].append(key)
+    return mortality_ratings
 
-
-
-
-
-
+print(mortality_scale(hurricane_data_dict))
 
 # write your greatest damage function here:
+def highest_damages(hurricane_data):
 
 
 
