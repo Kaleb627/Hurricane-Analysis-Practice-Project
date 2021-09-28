@@ -59,7 +59,6 @@ def hurricanes_by_date(dict):
         else:
             date_dict[current_year].append(current_cane)
     return date_dict
-
 print(hurricanes_by_date(hurricane_data_dict))
 print('---------------------------------------------------')
 
@@ -73,7 +72,6 @@ def area_occurance(hurricane_data):
             else:
                 occurence_dict[area] += 1
     return occurence_dict
-
 print(area_occurance(hurricane_data_dict))
 print('---------------------------------------------------')
 
@@ -133,7 +131,6 @@ def highest_damages(hurricane_data):
         else: continue
     return print('The most damaging hurricane in the data is {}, with an estimated cost of ${}.'
     .format(damaging_hurricane, highest_damage))
-
 highest_damages(hurricane_data_dict)
 print('---------------------------------------------------')
 
