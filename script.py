@@ -40,7 +40,7 @@ def hurricane_dictionary(names, months, years, max_sustained_winds, areas_affect
     hurricane_data = {}
     for i in range(34):
         hurricane_data[names[i]] = {'Name': names[i], 'Month': months[i], 'Year': years[i],'Max Sustained Wind': max_sustained_winds[i], 
-        'Areas Affected': areas_affected[i], 'Damage': damages[i], 'Deaths': deaths[i]}
+        'Areas Affected': areas_affected[i], 'Damage': updated_damages_list[i], 'Deaths': deaths[i]}
     return hurricane_data
 
 hurricane_data_dict = hurricane_dictionary(names, months, years, max_sustained_winds, areas_affected, deaths)
@@ -138,3 +138,20 @@ highest_damages(hurricane_data_dict)
 print('---------------------------------------------------')
 
 # write your catgeorize by damage function here:
+def damage_scale(hurricane_data):
+    damage_ratings = {0: [], 1: [], 2: [], 3: [], 4: []}
+    for key, value in hurricane_data.items():
+        if value['Deaths'] == 'Damages not recorded':
+            continue
+        elif value['Damage'] >= 0 and value['Damage'] < 100000000:
+            damage_ratings[0].append(key)
+        elif value['Damage'] >= 100000000 and value['Damage'] < 1000000000:
+            damage_ratings[1].append(key)
+        elif value['Damage'] >= 1000000000 and value['Damage'] < 10000000000:
+            damage_ratings[2].append(key)
+        elif value['Damage'] >= 10000000000 and value['Damage'] < 50000000000:
+            damage_ratings[3].append(key)
+        else:
+            damage_ratings[4].append(key)
+    return damage_ratings
+print(damage_scale(hurricane_data_dict))
