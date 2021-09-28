@@ -141,9 +141,7 @@ print('---------------------------------------------------')
 def damage_scale(hurricane_data):
     damage_ratings = {0: [], 1: [], 2: [], 3: [], 4: []}
     for key, value in hurricane_data.items():
-        if value['Deaths'] == 'Damages not recorded':
-            continue
-        elif value['Damage'] >= 0 and value['Damage'] < 100000000:
+        if value['Damage'] == 'Damages not recorded' or(value['Damage'] >= 0 and value['Damage'] < 100000000):
             damage_ratings[0].append(key)
         elif value['Damage'] >= 100000000 and value['Damage'] < 1000000000:
             damage_ratings[1].append(key)
